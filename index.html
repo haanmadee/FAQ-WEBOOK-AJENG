@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Toggle Poppins Mobile Size 12px</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset CSS Dasar */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        body {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Container Utama */
+        .faq-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Styling Item FAQ (KOTAK) */
+        .faq-item {
+            background-color: #e8e8e8; /* Light Grey */
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        /* Styling Tombol Pertanyaan */
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            text-align: left;
+            
+            /* FONT SETTING - DESKTOP */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700; /* Bold */
+            font-size: 17px; 
+            line-height: 1.2;
+            
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Ikon Plus/Minus */
+        .faq-icon {
+            font-size: 24px;
+            font-weight: 400;
+            flex-shrink: 0;
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Styling Konten Jawaban */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: transparent;
+            padding: 0 24px;
+        }
+
+        .faq-answer p {
+            /* FONT SETTING - DESKTOP */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400; /* Regular */
+            font-size: 15px; 
+            
+            /* SPASI RAPAT (Revisi 1.0 - 1.3) */
+            line-height: 1.3; 
+            
+            margin-bottom: 20px;
+            opacity: 0.9;
+            color: #444;
+        }
+
+        /* --- STATE AKTIF (Saat diklik) --- */
+        .faq-item.active {
+            background-color: #18375d; /* Biru Tua #18375d */
+            box-shadow: 0 8px 20px rgba(24, 55, 93, 0.25);
+        }
+
+        .faq-item.active .faq-question {
+            color: #ffffff;
+        }
+
+        .faq-item.active .faq-answer p {
+            color: #f0f0f0; 
+        }
+
+        .faq-item.active .faq-icon {
+            color: #ffffff;
+            transform: rotate(45deg); 
+        }
+
+        /* --- MOBILE RESPONSIVE TWEAKS (Layar < 600px) --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px; 
+            }
+
+            .faq-question {
+                font-size: 13px; /* PERTANYAAN (BOLD) menjadi 13px */
+                padding: 15px 20px; /* Padding sedikit dirapatkan lagi */
+            }
+
+            .faq-answer {
+                padding: 0 20px; 
+            }
+
+            .faq-answer p {
+                font-size: 12px; /* JAWABAN (REGULAR) menjadi 12px (SESUAI REQUEST) */
+                line-height: 1.4; 
+            }
+            
+            .faq-icon {
+                font-size: 18px; /* Ikon menyesuaikan agar tidak terlalu besar */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                “Kak, aku bener-bener pemula banget.. bisa ikut?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>BISA BANGET. WBook ini memang disusun buat kamu yang mulai dari level 0 Kok.<br>
+                Ada step-by-step, ada contoh, ada komunitas yang akan bantu kamu pelan-pelan. You’re safe here.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Harus punya skill dulu nggak sih?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Nope. Di dalam WBook kamu bakalan diajak milih skill, nyiapin strategi, dan ngebangun profil dari awal.<br>
+                Semua dibuat jelas dan bertahap, karena setiap orang bisa berkembang.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Ini bukan yang scammy scam gitu kan kak?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Bukan dong. Ini based on pengalaman real 6 tahun kerja remote, Plus ada komunitas eksklusif yang aktif. scam mana punya grup sharing & webinar rutin??</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Akses komunitasnya bayar lagi nggak?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>GRATIS. Seumur hidup. Semua sharing session, webinar, materi tambahan, langsung masuk ke kamu tanpa bayar sepeserpun.<br></p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Update WBook-nya berbayar nggak?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Engga dong. Semua update langsung otomatis kamu dapat. Karena dunia remote kerja itu berubahnya cepat dan kamu deserve informasi terbaru tanpa harus top up lagi</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Formatnya apa? Bisa dibuka dari HP?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Format Notion, super simple, rapi, dan mobile-friendly. Dibuka dari HP? YES. Bahkan sambil gendong anak juga bisa</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Kak, aku ibu rumah tangga.. sempet ga ya?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>WBook ini dibuat supaya kamu bisa belajar pelan-pelan tanpa pressure. Materinya bisa kamu cicil 5–10 menit sehari.<br>
+                Komunitasnya juga supportive.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Dapat sertifikat atau apa gitu nggak?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Nggak ada sertifikat.<br><br>
+                Yang kamu dapat:<br>
+                • skill<br>
+                • strategi nyata<br>
+                • komunitas support system<br>
+                • arah yang jelas<br>
+                • dan peluang landing remote job beneran<br>
+                (Berasa lebih mahal kan? Emang.)</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Kalau aku bingung boleh tanya-tanya?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Ya bisa dong.<br><br>
+                Makanya ada EXCLUSIVE COMMUNITY itu.<br>
+                Sini gabung, nanti kamu bisa tanya apa pun di grup, ikut sharing session, ngobrol sama yang lain, dan nggak ngerasa sendirian di journey ini.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                “Worth it ngga?”
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Kalau kamu serius mau kerja dari rumah → ini shortcut kamu.<br><br>
+                Kalau kamu cuma mau baca-baca doang juga boleh, tapi hati-hati malah jadi pengen resign lho nanti 🤭</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Toggle active class
+                item.classList.toggle('active');
+
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.innerText = "-"; 
+                } else {
+                    answer.style.maxHeight = null;
+                    icon.innerText = "+"; 
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
